@@ -1,0 +1,7 @@
+streams:
+  - url: rtsp://camera1/stream
+  - url: rtsp://camera2/stream
+fps: 1
+batch_size: 5
+amqp_url: amqp://guest:guest@rabbitmq/
+queue_name: frame_batches
