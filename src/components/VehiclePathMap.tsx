@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import L from 'leaflet';
+import 'leaflet/dist/leaflet.css';
 
 interface VehiclePathMapProps {
   plate: string;
@@ -12,12 +13,6 @@ export default function VehiclePathMap({ plate }: VehiclePathMapProps) {
   const mapContainerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Add Leaflet CSS
-    const link = document.createElement('link');
-    link.rel = 'stylesheet';
-    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
-    document.head.appendChild(link);
-
     // Initialize map
     if (!mapRef.current && mapContainerRef.current) {
       mapRef.current = L.map(mapContainerRef.current).setView([13.0878, 80.2785], 13);
